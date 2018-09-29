@@ -2,5 +2,6 @@
     "env": {
         "API_KEY": "@coinbase-api-key",
         "API_SECRET": "@coinbase-api-secret"
-    }
+    },
+    "alias": "sell-incoming-coinbase.julian.jetzt"
 }

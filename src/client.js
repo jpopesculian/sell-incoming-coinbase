@@ -19,7 +19,8 @@ const promisified = [
   'getPaymentMethods',
   'sell',
   'getAccounts',
-  'withdraw'
+  'withdraw',
+  'getTransaction'
 ].reduce(
   (fns, fnName) => Object.assign(fns, { [fnName]: promisifyObj(fnName) }),
   new Object()

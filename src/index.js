@@ -9,13 +9,22 @@ const {
   getEURAccount,
   withdraw
 } = require('./client')
+const { pollTransaction } = require('./polling')
 const { send, json } = require('micro')
 
-const handlePayment = async event => {
-  const { amount, currency } = event.additional_data.amount
-  const account = await getAccount(client, event.account.id)
+const sellPayment = async transaction => {
+  const { amount, currency } = transaction.amount
   const fiatPM = await getFiatPaymentMethod(client)
-  return sell(account, { amount, currency, payment_method: fiatPM.id })
+  return sell(transaction.account, {
+    amount,
+    currency,
+    payment_method: fiatPM.id
+  })
+}
+
+const handlePayment = async event => {
+  const { transaction } = event.additional_data
+  return pollTransaction(event.account.id, transaction.id, sellPayment)
 }
 
 const handleSell = async event => {
@@ -28,9 +37,9 @@ const handleSell = async event => {
 const handle = async event => {
   switch (event.type) {
     case 'wallet:addresses:new-payment':
-      await handlePayment(event)
+      return await handlePayment(event)
     case 'wallet:sells:completed':
-      await handleSell(event)
+      return await handleSell(event)
     case 'ping':
       return 'pong'
   }

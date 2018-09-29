@@ -1,0 +1,53 @@
+{
+    "id": "42e0f12c-bf6d-5167-b38a-d1588af1ada1",
+    "type": "wallet:addresses:new-payment",
+    "data": {
+        "id": "7067fd7d-4e13-58b2-bedf-abca4250ac60",
+        "address": "3AKGm21CKJeBra4Y4yMd6Yy94ML4tniyaw",
+        "name": null,
+        "created_at": "2018-09-29T16:52:08Z",
+        "updated_at": "2018-09-29T16:52:08Z",
+        "network": "bitcoin",
+        "uri_scheme": "bitcoin",
+        "resource": "address",
+        "resource_path": "/v2/accounts/3b3e31f6-fc46-5203-9003-a94a3850a3a3/addresses/7067fd7d-4e13-58b2-bedf-abca4250ac60",
+        "warning_title": "Only send Bitcoin (BTC) to this address",
+        "warning_details": "Sending any other digital asset, including Bitcoin Cash (BCH), will result in permanent loss."
+    },
+    "user": {
+        "id": "bc2334eb-3bff-5f79-a28a-895342284d77",
+        "resource": "user",
+        "resource_path": "/v2/users/bc2334eb-3bff-5f79-a28a-895342284d77"
+    },
+    "account": {
+        "id": "3b3e31f6-fc46-5203-9003-a94a3850a3a3",
+        "resource": "account",
+        "resource_path": "/v2/accounts/3b3e31f6-fc46-5203-9003-a94a3850a3a3"
+    },
+    "delivery_attempts": 1,
+    "created_at": "2018-09-29T16:56:26Z",
+    "resource": "notification",
+    "resource_path": "/v2/notifications/42e0f12c-bf6d-5167-b38a-d1588af1ada1",
+    "additional_data": {
+        "hash": "75718233dca371649ee17d66aa3268a515be356109b885b56783d0653c7c1c5c",
+        "amount": {
+            "amount": "0.18259337",
+            "currency": "BTC"
+        },
+        "transaction": {
+            "id": "32c6642b-9c07-5e45-ae38-7982bb9d3e90",
+            "resource": "transaction",
+            "resource_path": "/v2/accounts/3b3e31f6-fc46-5203-9003-a94a3850a3a3/transactions/32c6642b-9c07-5e45-ae38-7982bb9d3e90"
+        }
+    },
+    "delivered_at": "2018-09-29T16:56:26Z",
+    "delivery_response": {
+        "message": "Notification delivered",
+        "body": "{\"status\":\"success\"}",
+        "status_code": 200
+    },
+    "subscriber": {
+        "type": "oauth",
+        "client_id": "357413c939ccce28d601a40130ae580017597388b1b50aa9a31bc275ad1679b9"
+    }
+}
