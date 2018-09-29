@@ -1,9 +1,11 @@
 const { Client } = require('coinbase')
-const { apiKey, apiSecret } = require('./settings')
 const { text } = require('micro')
 const { promisify } = require('util')
 
-const client = new Client({ apiKey, apiSecret })
+const client = new Client({
+  apiKey: process.env.API_KEY,
+  apiSecret: process.env.API_SECRET
+})
 
 const verify = async req => {
   return client.verifyCallback(await text(req), req.headers['cb-signature'])

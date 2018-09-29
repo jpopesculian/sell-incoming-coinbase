@@ -3,16 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "forever node_modules/micro/bin/micro.js",
+    "dev": "micro-dev -d .env",
+    "inspect": "node --inspect node_modules/.bin/micro-dev",
+    "console": "node -r dotenv/config"
+  },
   "dependencies": {
-    "coinbase": "^3.0.0",
+    "coinbase": "^2.0.8",
+    "forever": "^0.15.3",
     "micro": "^9.3.3"
   },
-  "scripts": {
-    "start": "micro",
-    "dev": "micro-dev",
-    "inspect": "node --inspect node_modules/.bin/micro-dev"
-  },
   "devDependencies": {
+    "dotenv": "^6.0.0",
     "eslint-config-next": "^0.2.4",
     "eslint-config-prettier": "^3.1.0",
     "micro-dev": "^3.0.0"
