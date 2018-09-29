@@ -31,12 +31,14 @@ const handle = async event => {
       await handlePayment(event)
     case 'wallet:sells:completed':
       await handleSell(event)
+    case 'ping':
+      return 'pong'
   }
   return null
 }
 
 module.exports = async (req, res) => {
-  if (!await client.verify(req)) {
+  if (!await verify(req)) {
     send(res, 401)
   }
   try {
